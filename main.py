@@ -1,16 +1,18 @@
-# This is a sample Python script.
+import pygame
+import control_all_project
+from Ship_my import ship_my
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def Display_D():
+    pygame.init()
+    screen = pygame.display.set_mode((900, 700))
+    pygame.display.set_caption("Ships_battle")
+    bg_color = (0, 0, 0)
+    ship = ship_my(screen)
+    while True:
+        control_all_project.all_control(ship)
+        ship.update_ship()
+        screen.fill(bg_color)
+        ship.risovka()
+        pygame.display.flip()
+Display_D()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
