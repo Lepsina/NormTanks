@@ -18,6 +18,7 @@ class ship_my():
         """Обновление позиции корабля"""
         if self.mright and self.rect.right < self.screen_rect.right:
             self.rect.centerx += 1
-        elif self.
+        elif self.mleft and self.rect.left > self.screen_rect.left:
+            self.rect.centerx -= 1
 
 
